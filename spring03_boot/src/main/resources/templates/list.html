@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="UTF-8">
+<meta charset="UTF-8"/>
 <meta th:include="include/header::header" th:remove="tag"/>
+<!-- <link rel="stylesheet" type="text/css" href="/css/my.css"> -->
 <title>Insert title here</title>
-<script src="/js/test.js"></script>
+<script th:src="@{/js/test.js}"></script>
 <script>
 	$(function(){ 
 		test();
@@ -12,8 +13,8 @@
 </script>
 </head>
 <body>
-	<div>방명록</div>
-	
+	<div>방명록</div><br/>
+	<img src="/images/fruit.jpg" style="width:80px;"><br>
 	<a href="write.do">방명록 작성</a>
 	<table border="1"> 
 		<tr>
@@ -26,8 +27,8 @@
 			<td><span th:text="${row.idx}"></span></td>
 			<td><span th:text="${row.name}"></span></td>
 			<td>
-				<a th:href="@{view.do(idx=${row.idx)}">
-					<span th:text="${row.content"></span>
+				<a th:href="@{view.do(idx=${row.idx})}">
+					<span th:text="${row.content}"></span>
 				</a>
 			</td>
 			<td>

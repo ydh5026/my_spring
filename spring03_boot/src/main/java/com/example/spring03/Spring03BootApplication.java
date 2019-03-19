@@ -19,16 +19,18 @@ public class Spring03BootApplication {
 		SpringApplication.run(Spring03BootApplication.class, args);
 	}
 	
-	@Bean
-	public SqlSessionFactory sqlSessionFactory(DataSource dataSource) throws Exception { 
-		SqlSessionFactoryBean bean = new SqlSessionFactoryBean(); 
-		bean.setDataSource(dataSource);
-		return bean.getObject(); 
-	}
-
 	
 	@Bean
-	public SqlSessionTemplate sqlSession(SqlSessionFactory factory) { 
-		return new SqlSessionTemplate(factory);
+	public SqlSessionFactory sqlSessionFactory(DataSource datasource) throws Exception {
+		SqlSessionFactoryBean bean = new SqlSessionFactoryBean(); 
+		bean.setDataSource(datasource);
+		return bean.getObject(); 
 	}
+	
+	@Bean
+	public SqlSessionTemplate sqlSession(SqlSessionFactory factory ) { 
+		return new SqlSessionTemplate(factory); 
+	}
+	
+	
 }
