@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta th:include="include/header::header" th:remove="tag"/>
+<title>Insert title here</title>
+<script src="/js/test.js"></script>
+<script>
+	$(function(){ 
+		test();
+	});
+</script>
+</head>
+<body>
+	<div>방명록</div>
+	
+	<a href="write.do">방명록 작성</a>
+	<table border="1"> 
+		<tr>
+			<td>번호</td>
+			<td>이름</td>
+			<td>내용</td>
+			<td>날짜</td>
+		</tr>
+		<tr th:each="row:${list}">
+			<td><span th:text="${row.idx}"></span></td>
+			<td><span th:text="${row.name}"></span></td>
+			<td>
+				<a th:href="@{view.do(idx=${row.idx)}">
+					<span th:text="${row.content"></span>
+				</a>
+			</td>
+			<td>
+				<span th:text="${#dates.format(row.post_date, 'yyyy-MM-dd HH:mm:ss')}"></span>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>
