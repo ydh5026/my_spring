@@ -12,7 +12,7 @@ public interface CartService {
 	void delete(int cart_id); 
 	void deleteAll(String userid); 
 	void update(int cart_id); 
-	void sumMoney(String userid); 
+	int sumMoney(String userid); 
 	int countCart(String userid, int product_id); 
 	void updateCart(CartDTO dto); 
 	void modifyCart(CartDTO dto); 
