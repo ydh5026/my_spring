@@ -13,5 +13,8 @@
 </c:if>
 <h1>hello world!</h1>
 <P>  The time on the server is ${serverTime}. </P>
+<!-- 배포 디렉토리 확인  -->
+<%= application.getRealPath("/") %>
+
 </body>
 </html>
