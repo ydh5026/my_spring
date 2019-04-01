@@ -5,8 +5,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<%@ include file="../include/header.jsp" %>
 </head>
 <body>
-${message}
+<%@ include file="../include/menu.jsp" %>
+<h2>${message}</h2>
 </body>
 </html>

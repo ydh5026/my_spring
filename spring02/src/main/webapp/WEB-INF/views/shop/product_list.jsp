@@ -23,7 +23,13 @@
 		<tr align="center">
 			<td>${row.product_id}</td>
 			<td><img src="${path}/images/${row.picture_url}" width="70" height="70"></td>
-			<td><a href="${path}/shop/detail/${row.product_id}">${row.product_name}</a></td>
+			<td>
+				<a href="${path}/shop/detail/${row.product_id}">${row.product_name}</a>
+				<c:if test="${sessionScope.admin_userid != null}">
+					<br>
+					<a href="${path}/shop/edit/${row.product_id}">[편집]</a>
+				</c:if>
+			</td>
 			<td>
 				<fmt:formatNumber value="${row.price}" pattern="#,###" />
 			</td>

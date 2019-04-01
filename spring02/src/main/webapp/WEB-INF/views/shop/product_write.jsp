@@ -35,7 +35,7 @@
 <body>
 <%@ include file="../include/admin_menu.jsp" %>
 <h2>상품등록</h2>
-<form id="form1" name="form1" method="post" action="multipart/form-data">
+<form id="form1" name="form1" method="post" enctype="multipart/form-data">
 	<table>
 		<tr>
 			<td>상품명</td>
