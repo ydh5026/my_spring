@@ -21,6 +21,8 @@
 	
 	<!-- images 폴더 매핑 -->
 	<resources location="/WEB-INF/views/images/" mapping="/images/**" />
+	
+	<resources location="/WEB-INF/views/json/" mapping="/json/**" />
 
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources 
 		in the /WEB-INF/views directory -->
