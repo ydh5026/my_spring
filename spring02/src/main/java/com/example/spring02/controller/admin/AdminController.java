@@ -40,8 +40,9 @@ public class AdminController {
 	}
 	
 	@RequestMapping("logout.do")
-	public String logout(HttpSession session) { 
+	public String logout(HttpSession session, ModelAndView mav) { 
 		session.invalidate(); // 새션 초기화
+		mav.addObject("message", "logout");
 		return "redirect:/admin/login.do";
 	}
 	
